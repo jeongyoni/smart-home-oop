@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class SmartHomeApp {
 
 	static Scanner sc = new Scanner(System.in);
+
 	static Tv tv = new Tv();
 	static Audio audio = new Audio();
 	static AirConditioner ac = new AirConditioner();
 	static Light light = new Light();
+
+	static SmartDevice[] devices = { tv, audio, ac, light };
 
 	public static void main(String[] args) {
 

@@ -1,21 +1,21 @@
 package practice.oop;
 
-public class Audio {
+public class Audio extends SmartDevice {
 
-    String name;
-    boolean isOn;
+//    String name;
+//    boolean isOn;
     int volume;
     int track;
     String album;
     String artist;
 
-    void turnOn() {
-        isOn = true;
-    }
-
-    void turnOff() {
-        isOn = false;
-    }
+//    void turnOn() {
+//        isOn = true;
+//    }
+//
+//    void turnOff() {
+//        isOn = false;
+//    }
 
     void volumeUp() {
         volume += 10;
@@ -29,6 +29,7 @@ public class Audio {
         track = t;
     }
 
+    @Override
     void showStatus() {
         System.out.println(
                 "Audio (" + (isOn ? "ON" : "OFF")

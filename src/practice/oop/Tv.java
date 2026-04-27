@@ -1,20 +1,20 @@
 package practice.oop;
 
-public class Tv {
+public class Tv extends SmartDevice{
 
-    String name;
-    boolean isOn;
+//    String name;
+//    boolean isOn;
     int channel;
     int volume;
 
     ////기능////
-    void turnOn(){
-        isOn =true;
-    }
-
-    void turnOff(){
-        isOn=false;
-    }
+//    void turnOn(){
+//        isOn =true;
+//    }
+//
+//    void turnOff(){
+//        isOn=false;
+//    }
 
     void channelUp(){channel ++;}
 
@@ -30,9 +30,10 @@ public class Tv {
         volume -= 10;
     }
 
+    @Override
     void showStatus(){
-        System.out.println(
-                "Tv (" + (isOn ? "ON" : "OFF")
+        System.out.println("Tv ("
+                + (isOn ? "ON" : "OFF")
                 +", Ch " +channel
                 +", Vol " +volume + ")");
     }
