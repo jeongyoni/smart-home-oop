@@ -2,18 +2,20 @@ package practice.oop;
 
 public abstract class SmartDevice {
 
-    String name;
-    boolean isOn;
+    private String name;
+    private boolean isOn;
 
 
-    void turnOn() {
-        isOn = true;
-    }
+    public String getName(){return name;}
+    public void setName(String name){this.name=name;}
 
-    void turnOff() {
-        isOn = false;
-    }
+    public boolean isOn(){return isOn;}
 
-    abstract void showStatus();
+    public void turnOn() {isOn = true;}
+    public void turnOff() {isOn = false;}
+
+    public abstract void showStatus();
+
+    abstract void controlMenu();
 
 }

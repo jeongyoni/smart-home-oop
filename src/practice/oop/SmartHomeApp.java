@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SmartHomeApp {
 
-	static Scanner sc = new Scanner(System.in);
+	public static Scanner sc = new Scanner(System.in);
 
 	static Tv tv = new Tv();
 	static Audio audio = new Audio();
@@ -17,27 +17,30 @@ public class SmartHomeApp {
 
 		System.out.println("\n 스마트홈 제어 시스템 시작..");
 		// TODO.. 기기 등록..
+		//TV
+		tv.setName("TV");
+		tv.setChannel(30);
+		tv.setVolume(10);
+		tv.turnOn();
 
-		tv.name = "TV";
-		tv.channel = 30;
-		tv.volume = 10;
-		tv.isOn = true;
+		// Audio
+		audio.setName("Audio");
+		audio.setVolume(30);
+		audio.setTrack(30);
+		audio.setAlbum("Arirang");
+		audio.setArtist("BTS");
+		audio.turnOn();
 
-		audio.name = "Audio";
-		audio.volume = 30;
-		audio.track = 30;
-		audio.album = "Arirang";
-		audio.artist = "BTS";
-		audio.isOn = true;
+		// 에어컨
+		ac.setName("에어컨");
+		ac.setMode("냉방");
+		ac.setTemperature(24);
+		ac.turnOn();
 
-		ac.name = "에어컨";
-		ac.mode = "냉방";
-		ac.temperature = 24;
-		ac.isOn = true;
-
-		light.name = "전등";
-		light.brightness = 40;
-		light.isOn = true;
+		// 전등
+		light.setName("전등");
+		light.setBrightness(40);
+		light.turnOn();
 
 		while (true) {
 			showAllDevices();
@@ -71,8 +74,8 @@ public class SmartHomeApp {
 
 		//다형성 적용
 		for (int i =0; i<devices.length;i++){
-			System.out.println("["+ (i+1)+"]["+devices[i].name+"]("
-			+(devices[i].isOn? "ON":"OFF")+")");
+			System.out.println("["+ (i+1)+"]["+devices[i].getName()+"]("
+			+(devices[i].isOn() ? "ON":"OFF")+")");
 		}
 	}
 	//선택된 기기 제어하기
@@ -93,7 +96,7 @@ public class SmartHomeApp {
 
 	}
 	//숫자 입력 유틸
-	static int readInt(String prompt) {
+	public static int readInt(String prompt) {
 		System.out.print(prompt);
 		while (!sc.hasNextInt()) {
 			System.out.print("  숫자를 입력하세요 > ");

@@ -1,13 +1,16 @@
 package practice.oop;
 
-public class Tv extends MediaDevice{
+import java.net.SocketOption;
+import java.security.spec.RSAOtherPrimeInfo;
 
-//    String name;
+public class Tv extends MediaDevice {
+
+    //    String name;
 //    boolean isOn;
-    int channel;
+    private int channel;
 //    int volume;
 
-    ////기능////
+    /// /기능////
 //    void turnOn(){
 //        isOn =true;
 //    }
@@ -15,11 +18,20 @@ public class Tv extends MediaDevice{
 //    void turnOff(){
 //        isOn=false;
 //    }
+    public int getChannel() {
+        return channel;
+    }
 
-    void channelUp(){channel ++;}
+    public void setChannel(int ch) {
+        this.channel = ch;
+    }
 
-    void channelDown(){
-        channel --;
+    void channelUp() {
+        channel++;
+    }
+
+    void channelDown() {
+        channel--;
     }
 
 //    void volumeUp(){
@@ -31,11 +43,30 @@ public class Tv extends MediaDevice{
 //    }
 
     @Override
-    void showStatus(){
+    public void showStatus() {
         System.out.println("Tv ("
-                + (isOn ? "ON" : "OFF")
-                +", Ch " +channel
-                +", Vol " +volume + ")");
+                + (isOn() ? "ON" : "OFF")
+                + ", Ch " + channel
+                + ", Vol " + getVolume() + ")");
+    }
+
+    @Override
+    public void controlMenu() {
+        while (true) {
+
+            showStatus();
+            System.out.println("[1] ON  [2] OFF  [3] Channel  [4] Volume Up  [5] Volume Down  [0] Back");
+            int idx = SmartHomeApp.readInt("  메뉴 선택 > ");
+            if (idx == 0) return;
+            else if (idx == 1) turnOn();
+            else if (idx == 2) turnOff();
+            else if (idx == 3) {
+                int ch = SmartHomeApp.readInt("  채널 입력 > ");
+                setChannel(ch);
+            } else if (idx == 4) volumeUp();
+            else if (idx == 5) volumeDown();
+        }
     }
 
 }
+

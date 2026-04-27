@@ -1,9 +1,12 @@
 package practice.oop;
 
 public abstract class MediaDevice extends SmartDevice{
-    int volume;
+    private int volume;
 
-    void volumUp(){volume +=10;}
-    void volumDown(){volume -=10;}
+    public int getVolume(){return volume;}
+    public void setVolume(int volume) { this.volume = volume; }
+
+    public void volumeUp(){volume +=10;}
+    public void volumeDown(){volume -=10;}
 
 }
