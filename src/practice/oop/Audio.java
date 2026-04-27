@@ -5,6 +5,9 @@ public class Audio {
     String name;
     boolean isOn;
     int volume;
+    int track;
+    String album;
+    String artist;
 
     void turnOn(){
         isOn =true;
@@ -22,9 +25,14 @@ public class Audio {
         volume -= 10;
     }
 
+    void changeTrack(int t){track =t;}
+
     void showStatus(){
         System.out.println(
                 "Audio (" + (isOn ? "ON" : "OFF")
+                        +",트랙"+track +"번"
+                        +", 앨범" +album
+                        +",가수"+artist
                         +", Vol " +volume + ")");
     }
 }

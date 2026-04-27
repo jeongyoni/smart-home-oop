@@ -3,6 +3,7 @@ package practice.oop;
 public class Light {
     String name;
     boolean isOn;
+    int brightness;
 
     void turnOn(){
         isOn =true;
@@ -12,9 +13,11 @@ public class Light {
         isOn=false;
     }
 
+    void setBrightness(int b){brightness =b;}
+
     void showStatus(){
-        System.out.print(
-                "Light(" +(isOn? "ON" : "OFF")
-        );
+        System.out.println(
+                "전등(" +(isOn? "ON" : "OFF")
+                +",밝기" +brightness + "%)");
     }
 }

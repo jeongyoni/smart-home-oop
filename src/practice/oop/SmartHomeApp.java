@@ -7,6 +7,8 @@ public class SmartHomeApp {
 	static Scanner sc = new Scanner(System.in);
 	static Tv tv = new Tv();
 	static Audio audio = new Audio();
+	static AirConditioner ac =new AirConditioner();
+	static Light light =new Light();
 
 	public static void main(String[] args) {
 
@@ -16,10 +18,23 @@ public class SmartHomeApp {
 		tv.name = "TV";
 		tv.channel = 30;
 		tv.volume = 10;
+		tv.isOn=true;
 
 		audio.name ="Audio";
 		audio.volume = 30;
+		audio.track=30;
+		audio.album="Arirang";
+		audio.artist="BTS";
 		audio.isOn =true;
+
+		ac.name="에어컨";
+		ac.mode="냉방";
+		ac.temperature=24;
+		ac.isOn=true;
+
+		light.name = "전등";
+		light.brightness = 40;
+		light.isOn = true;
 		
 		while (true) {
 			

@@ -4,28 +4,25 @@ public class AirConditioner {
 
     String name;
     boolean isOn;
-    int volume;
+    int temperature;
+    String mode;
 
-    void turnOn(){
-        isOn =true;
-    }
+    void turnOn(){isOn =true;}
 
     void turnOff(){
         isOn=false;
     }
 
-    void volumeUp(){
-        volume += 10;
-    }
+    void setTemperature(int t){temperature=t;}
 
-    void volumeDown(){
-        volume -= 10;
-    }
+    void setMode(String m){mode = m;}
+
 
     void showStatus(){
         System.out.println(
-                "AirConditioner("+(isOn? "ON" : "OFF")
-                +",Vol" +volume + ")");
+                "에어컨("+(isOn? "ON" : "OFF")
+                +","+mode
+                +"," +temperature +"도)");
     }
 
 }
