@@ -64,9 +64,9 @@ public class Audio extends MediaDevice {
             else if (idx == 3) {
                 int t = SmartHomeApp.readInt("  트랙 입력 > ");
                 changeTrack(t);
-            }
-            else if (idx == 4) volumeUp();
+            } else if (idx == 4) volumeUp();
             else if (idx == 5) volumeDown();
+            else System.out.println("잘못된 번호 입니다.");
         }
     }
 }

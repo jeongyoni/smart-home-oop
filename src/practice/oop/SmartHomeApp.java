@@ -91,7 +91,8 @@ public class SmartHomeApp {
 			return true;
 		}
 
-		devices[idx-1].showStatus();
+
+		devices[idx - 1].controlMenu();
 		return true;
 
 	}
