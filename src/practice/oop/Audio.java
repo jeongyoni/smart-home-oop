@@ -1,10 +1,10 @@
 package practice.oop;
 
-public class Audio extends SmartDevice {
+public class Audio extends MediaDevice {
 
 //    String name;
 //    boolean isOn;
-    int volume;
+//    int volume;
     int track;
     String album;
     String artist;
@@ -17,13 +17,13 @@ public class Audio extends SmartDevice {
 //        isOn = false;
 //    }
 
-    void volumeUp() {
-        volume += 10;
-    }
-
-    void volumeDown() {
-        volume -= 10;
-    }
+//    void volumeUp() {
+//        volume += 10;
+//    }
+//
+//    void volumeDown() {
+//        volume -= 10;
+//    }
 
     void changeTrack(int t) {
         track = t;

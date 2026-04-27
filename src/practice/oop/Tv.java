@@ -1,11 +1,11 @@
 package practice.oop;
 
-public class Tv extends SmartDevice{
+public class Tv extends MediaDevice{
 
 //    String name;
 //    boolean isOn;
     int channel;
-    int volume;
+//    int volume;
 
     ////기능////
 //    void turnOn(){
@@ -22,13 +22,13 @@ public class Tv extends SmartDevice{
         channel --;
     }
 
-    void volumeUp(){
-        volume += 10;
-    }
-
-    void volumeDown(){
-        volume -= 10;
-    }
+//    void volumeUp(){
+//        volume += 10;
+//    }
+//
+//    void volumeDown(){
+//        volume -= 10;
+//    }
 
     @Override
     void showStatus(){
