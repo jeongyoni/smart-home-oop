@@ -7,95 +7,63 @@ public class SmartHomeApp {
 	static Scanner sc = new Scanner(System.in);
 	static Tv tv = new Tv();
 	static Audio audio = new Audio();
-<<<<<<< HEAD
-	static AirConditioner ac =new AirConditioner();
-	static Light light =new Light();
-=======
->>>>>>> 70a1b1667effdc54d4f58026a6ae9856f86a96e2
+	static AirConditioner ac = new AirConditioner();
+	static Light light = new Light();
 
 	public static void main(String[] args) {
 
 		System.out.println("\n 스마트홈 제어 시스템 시작..");
-		
-		// TODO.. 기기 등록.. 
+
 		tv.name = "TV";
 		tv.channel = 30;
 		tv.volume = 10;
-<<<<<<< HEAD
-		tv.isOn=true;
+		tv.isOn = true;
 
-		audio.name ="Audio";
+		audio.name = "Audio";
 		audio.volume = 30;
-		audio.track=30;
-		audio.album="Arirang";
-		audio.artist="BTS";
-		audio.isOn =true;
+		audio.track = 30;
+		audio.album = "Arirang";
+		audio.artist = "BTS";
+		audio.isOn = true;
 
-		ac.name="에어컨";
-		ac.mode="냉방";
-		ac.temperature=24;
-		ac.isOn=true;
+		ac.name = "에어컨";
+		ac.mode = "냉방";
+		ac.temperature = 24;
+		ac.isOn = true;
 
 		light.name = "전등";
 		light.brightness = 40;
 		light.isOn = true;
-=======
 
-		audio.name ="Audio";
-		audio.volume = 30;
-		audio.isOn =true;
->>>>>>> 70a1b1667effdc54d4f58026a6ae9856f86a96e2
-		
 		while (true) {
-			
-			/* TODO... 제어 가능한 모든 Device의 이름과 상태 출력하기 
-			 * [1] [TV] (ON)
-			 * [2] [Air Conditioner] (OFF)
-			 * [3] [Light] (OFF)
-			 */
-        	
-        	if (!selectDevice()) {
-        		System.out.println("\n 스마트홈 제어 시스템 종료..");
-        		return;
-        	}
-        }
-	}
-	
-	// 등록된 모든 기기 및 상태 보기
-	static void showAllDevices() {
+			showAllDevices();
 
+			if (!selectDevice()) {
+				System.out.println("\n 스마트홈 제어 시스템 종료..");
+				return;
+			}
+		}
+	}
+
+	static void showAllDevices() {
 		System.out.println("\n------------------------------");
 		System.out.println("        스마트홈 기기 목록       ");
-		System.out.println(" ------------------------------");
-		
-		System.out.println("현재 등록된 기기가 없습니다.");
-		
-		/* TODO 제어 가능한 모든 Device의 이름과 상태 출력하기 
-		 * [1] [TV] (ON)
-		 * [2] [Air Conditioner] (OFF)
-		 * [3] [Light] (OFF)
-		 */
+		System.out.println("------------------------------");
 
-
-
-
-		
-//		int idx = readInt("\n  제어할 기기 번호 (0: 뒤로) > ");
-//		if (idx == 0)
-//			return;
+		System.out.println("[1] TV (" + (tv.isOn ? "ON" : "OFF") + ")");
+		System.out.println("[2] Audio (" + (audio.isOn ? "ON" : "OFF") + ")");
+		System.out.println("[3] Air Conditioner (" + (ac.isOn ? "ON" : "OFF") + ")");
+		System.out.println("[4] Light (" + (light.isOn ? "ON" : "OFF") + ")");
 	}
-	
-	// 선택된 기기 제어하기
+
 	static boolean selectDevice() {
 		int idx = readInt("\n  제어할 기기 번호 (0: 종료) > ");
-        if (idx == 0) return false;
-        
-        System.out.println("To be implemented.");
-        return true;
+		if (idx == 0) return false;
+
+		System.out.println("To be implemented.");
+		return true;
 	}
-	
-	
-	// 숫자 입력 유틸
+
 	static int readInt(String prompt) {
 		System.out.print(prompt);
 		while (!sc.hasNextInt()) {
